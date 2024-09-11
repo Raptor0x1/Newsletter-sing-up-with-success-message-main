@@ -23,12 +23,12 @@
   <main>
     <div class="container">
       <picture class="hero-image">
-        <source media="(min-width: 1024px)" srcset="assets/images/illustration-sign-up-desktop.svg">
-        <img src="assets/images/illustration-sign-up-mobile.svg" alt="tablet">
+        <source media="(min-width:1024px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="tablet">
       </picture>
 
       <div class="signup-form">
-        <h2>Stay updated!</h2>
+        <h2 class="heading">Stay updated!</h2>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
         <ul>
           <li>Product discovery and building what matters</li>
@@ -42,7 +42,7 @@
           </div>
 
           <input id="email" name="email" type="text" placeholder="email@company.com" autofocus />
-          <button type="submit">Subscribe to monthly newsletter</button>
+          <button class="btn">Subscribe to monthly newsletter</button>
         </form>
       </div>
     </div>
@@ -52,11 +52,13 @@
    <!-- Success message start -->
 
     <div class="success-message">
-      <img src="assets/images/icon-success.svg" alt="success symbol">
-      <h2>Thanks for subscribing!</h2>
-      <p>A confirmation email has been sent to ash@loremcompany.com. 
-        Please open it and click the button inside to confirm your subscription.</p>
-      <button>Dismiss message</button>
+      <div class="success-header">
+        <img class="hero-image success-icon" src="assets/images/icon-success.svg" alt="success symbol">
+        <h2 class="heading success-heading">Thanks for subscribing!</h2>
+        <p>A confirmation email has been sent to <span class="email-text"></span>. 
+          Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+      <button class="btn">Dismiss message</button>
     </div>
 
     <!-- Success message end -->
