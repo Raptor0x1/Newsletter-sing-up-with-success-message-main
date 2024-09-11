@@ -14,6 +14,15 @@ function handleFormSubmit(e) {
         emailErrorElement.innerText = emailError;
         emailErrorColor.classList.toggle('error-state');
     }
+    else {
+        const sucessMessageElement = document.querySelector('.success-message');
+        const container = document.querySelector('.container');
+        const emailText = document.querySelector('.success-message .email-text');
+        container.innerText = "";
+        sucessMessageElement.style.display = "block";
+        emailText.innerText = email;
+
+    }
 
     function validateEmail(email) {
 
