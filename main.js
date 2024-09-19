@@ -39,4 +39,4 @@ function handleFormSubmit(e) {
 
 }
 
-
+form.addEventListener('submit', handleFormSubmit);
