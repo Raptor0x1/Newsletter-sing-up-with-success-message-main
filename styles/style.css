@@ -7,6 +7,7 @@
     --dark-grey: hsl(234, 29%, 20%);
 }
 
+ /* CSS Reset Start */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -38,6 +39,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 }
 
+/* CSS Reset End */
+
+/* Main Start */
+
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -47,18 +52,20 @@ body {
     min-height: 100vh;
     line-height: 1.5;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    width: 100%;
-    max-width: 50rem;
+.form-container {
+    max-width: 55rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-image img {
     width: 100%;
-}
+  }
 
 .signup-form {
     margin: 2rem 1.5rem;
@@ -100,8 +107,7 @@ body {
 
 #form label {
     font-size: 0.75rem;
-    font-weight: bold;
-    
+    font-weight: bold; 
 }
 
 .form-row {
@@ -109,10 +115,14 @@ body {
     justify-content: space-between;
 }
 
-#form input {
+#email {
     border: 1px solid var(--grey-color);
     margin-top: 0.5rem;
     color: var(--grey-color);
+}
+
+#email:focus {
+    color: var(--dark-grey);
 }
 
 #email-error {
@@ -128,6 +138,10 @@ body {
     color: var(--white-color);
 }
 
+.btn:hover {
+    background-image: linear-gradient(to right, hsl(355, 100%, 67%), hsl(7, 100%, 65%), hsl(24, 99%, 64%));
+}
+
 .error-state {
    background-color: var(--secondary-color);
    border: 1px solid var(--primary-color)!important;
@@ -139,7 +153,9 @@ input, button {
     display: block;
     width: 100%;
     border-radius: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.9rem 1.25rem;
+    cursor: pointer;
+    
 }
 
 .success-message {
@@ -148,8 +164,8 @@ input, button {
 }
 
 .success-header {
-    margin-top: 12rem;
-    margin-bottom: 22rem;
+    padding-top: 12rem;
+    padding-bottom: 19rem;
 }
 
 .success-icon {
@@ -166,19 +182,45 @@ input, button {
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     
     body {
         background-color: var(--dark-grey);
+        font-size: 1rem;
     }
 
-    .container {
-        display: flex;
+    .form-container {
         flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 1.5rem;
+        align-items: center;
+        padding: 1.25rem;
+        gap: 1rem;
         background-color: var(--white-color);
+        border-radius: 2rem;
     }
+
+    .signup-form {
+        margin: 0rem 2.5rem;
+        max-width: 43%;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+
+    .success-message {
+        max-width: 47%;
+        padding: 4rem;
+        background-color: var(--white-color);
+        margin: 0 auto;
+        border-radius: 2rem;
+    }
+
+    .success-header {
+        padding-top: 0;
+        padding-bottom: 0.75rem;
+    }
+
 }
 
 

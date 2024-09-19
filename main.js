@@ -12,16 +12,16 @@ function handleFormSubmit(e) {
         const emailErrorElement = form.querySelector('#email-error');
         const emailErrorColor = document.getElementById('email');
         emailErrorElement.innerText = emailError;
-        emailErrorColor.classList.toggle('error-state');
+        emailErrorColor.classList.add('error-state');
     }
     else {
-        const sucessMessageElement = document.querySelector('.success-message');
-        const container = document.querySelector('.container');
+        const successMessageElement = document.querySelector('.success-message');
+        const container = document.querySelector('.form-container');
         const emailText = document.querySelector('.success-message .email-text');
-        container.innerText = "";
-        sucessMessageElement.style.display = "block";
+        container.remove();
+        successMessageElement.style.display = "block";
         emailText.innerText = email;
-
+        emailErrorColor.classList.remove('error-state');
     }
 
     function validateEmail(email) {
@@ -39,6 +39,4 @@ function handleFormSubmit(e) {
 
 }
 
-
-form.addEventListener('submit', handleFormSubmit);
 
